@@ -15,12 +15,8 @@ app.get('/', (req, res) => {
  res.send('Hello World!');
 });
 
-app.listen(3000, () => {
- console.log('Example app listening on port 3000!');
-});
-
 app.use((req, res) => {
-    res.status(404).json({ message: 'Not found' })
-  })
+  res.status(404).json({ message: 'Not found' })
+})
   
 module.exports = app
