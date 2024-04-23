@@ -19,9 +19,17 @@ class NotFoundError extends ServerError {
     }
 }
 
+class ConflictError extends ServerError {
+    constructor(message) {
+        super(message);
+        this.status = 409;
+    }
+}
+
 
 module.exports = {
     ServerError,
     ValidationError,
-    NotFoundError
+    NotFoundError,
+    ConflictError
 }

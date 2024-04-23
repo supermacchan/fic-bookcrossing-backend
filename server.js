@@ -10,8 +10,6 @@ mongoose.set("strictQuery", true);
 
 const connection = mongoose.connect(uriDb, {
   dbName: process.env.DB_NAME,
-  // useNewUrlParser: true,
-  // useUnifiedTopology: true,
 });
 
 connection
