@@ -5,16 +5,18 @@ const {
     validateBody
 } = require('../../middleware/common');
 const {
-    registerSchema
+    registerSchema,
+    loginSchema
 } = require('../../helpers/validations');
 const {
     registrationController,
-    // loginController,
+    loginController,
     // logoutController,
     // checkCurrentUserController,
     // updateUserController
 } = require('../../controllers/authController');
 
 router.post('/signup', validateBody(registerSchema), registrationController);
+router.post('/login', validateBody(loginSchema), loginController);
 
 module.exports = router;

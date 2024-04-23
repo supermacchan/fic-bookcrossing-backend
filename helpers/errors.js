@@ -12,6 +12,13 @@ class ValidationError extends ServerError {
     }
 }
 
+class AuthorizationError extends ServerError {
+    constructor(message) {
+        super(message);
+        this.status = 401;
+    }
+}
+
 class NotFoundError extends ServerError {
     constructor(message) {
         super(message);
@@ -31,5 +38,6 @@ module.exports = {
     ServerError,
     ValidationError,
     NotFoundError,
-    ConflictError
+    ConflictError,
+    AuthorizationError
 }
