@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const { User } = require('../../db/userSchema');
-const { AuthorizationError, ValidationError } = require('../../helpers/errors');
+const { AuthorizationError, NotFoundError } = require('../../helpers/errors');
 
 require('dotenv').config();
 
@@ -10,7 +10,7 @@ const login = async (email, password) => {
     const user = await User.findOne({email});
 
     if (!user) {
-        throw new ValidationError("User not found");
+        throw new NotFoundError("User not found");
     }
 
     const passwordCheck = await bcrypt.compare(password, user.password);

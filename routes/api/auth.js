@@ -15,13 +15,14 @@ const {
     registrationController,
     loginController,
     logoutController,
-    // checkCurrentUserController,
+    checkCurrentUserController,
     // updateUserController
 } = require('../../controllers/authController');
 
 router.post('/signup', validateBody(registerSchema), registrationController);
 router.post('/login', validateBody(loginSchema), loginController);
 router.get('/logout', authMiddleware, logoutController);
+router.get('/current', authMiddleware, checkCurrentUserController);
 
 
 module.exports = router;
