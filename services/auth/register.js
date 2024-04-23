@@ -14,7 +14,7 @@ const register = async (username, email, password, secret) => {
     const fullAccess = secret.toLowerCase() === secretCode.toLowerCase();
 
     // assign temp avatar
-    const TEMP_AVATAR = "https://res.cloudinary.com/dzdi0fyvw/image/upload/v1680523142/avatars/642aabed33c045223f516bd0_user_avatar.png"
+    const TEMP_AVATAR = "https://res.cloudinary.com/dyd5p6vjc/image/upload/v1713876494/avatars/662784d73a402319fd3a4784_user_avatar.png"
 
     // create new user
     const user = new User({
